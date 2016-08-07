@@ -3,10 +3,17 @@
         "map": [
             {
                 "source": "./",
-                "installTo": "./"
+                "installTo": "./",
+                "excludes": [
+                    "mum-scripts"
+                ]
             }
         ],
-        "scripts": {}
+        "scripts": {
+            "afterInstall": [
+                "./mum-scripts/after-install.php"
+            ]
+        }
     },
     "dependencies": [
         {
