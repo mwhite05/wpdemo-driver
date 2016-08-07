@@ -1,0 +1,17 @@
+#! /bin/bash
+
+installPath=`cat ../../install_to`
+
+cd "$installPath"
+
+# Fix file and directory ownership / permissions
+chown -R www-data:www-data *
+chown www-data:www-data ../wp-config.php
+
+chmod 0644 ../wp-config.php
+
+find . -type f -exec chmod 0644 {} \+
+find . -type d -exec chmod 0755 {} \+
+
+# Ensure the WordPress uploads are writable but not executable
+find ./wp-content/uploads -type f -exec chmod 0660 {} \+

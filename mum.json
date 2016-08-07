@@ -11,7 +11,8 @@
         ],
         "scripts": {
             "afterInstall": [
-                "./mum-scripts/after-install.php"
+                "./mum-scripts/after-install.php",
+                "./mum-scripts/permissions-fix"
             ]
         }
     },

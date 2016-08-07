@@ -10,4 +10,9 @@ rename('./wp-config.php', '../wp-config.php');
 
 unlink('./wp-config-sample.php');
 
-// todo - fix permissions and ownership on files / directories
+// Make sure we have an uploads directory so we can properly set permissions on it
+if(!is_dir('./wp-content/uploads')) {
+    mkdir('./wp-content/uploads', true);
+}
+
+// permissions and ownership operations are done in bash
