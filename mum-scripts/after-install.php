@@ -1,8 +1,8 @@
 #! /usr/bin/php
 <?php
 
-mv('./readme.html', '../readme.html');
-mv('./wp-config.php', '../wp-config.php');
+rename('./readme.html', '../readme.html');
+rename('./wp-config.php', '../wp-config.php');
 
 unlink('./wp-config-sample.php');
 
