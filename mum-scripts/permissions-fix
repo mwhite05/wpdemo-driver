@@ -1,8 +1,7 @@
 #! /bin/bash
 
-installPath=`cat ../../install_to`
-
-cd "$installPath"
+webRootPath=`cat ../../install_to`
+cd "$webRootPath"
 
 # Fix file and directory ownership / permissions
 chown -R www-data:www-data *
