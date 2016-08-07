@@ -1,0 +1,17 @@
+{
+    "install": {
+        "map": [
+            {
+                "source": "./wp-content",
+                "installTo": "./"
+            }
+        ],
+        "scripts": {}
+    },
+    "dependencies": [
+        {
+            "source": "git@github.com:WordPress/WordPress.git#4.5.3",
+            "installTo": "./"
+        }
+    ]
+}
