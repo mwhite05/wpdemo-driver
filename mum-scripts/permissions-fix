@@ -15,3 +15,6 @@ find . -type d -exec chmod 0755 {} \+
 
 # Ensure the WordPress uploads are writable but not executable
 find ./wp-content/uploads -type f -exec chmod 0660 {} \+
+
+# Symlink our apache config file to sites-enabled
+ln -s /etc/apache2/sites-available/wpdemo.conf /etc/apache2/sites-enabled/wpdemo.conf
