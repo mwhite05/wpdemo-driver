@@ -6,18 +6,17 @@
                 "installTo": "./",
                 "excludes": [
                     "mum-scripts",
-                    "apache2"
+                    "apache"
                 ]
             },
             {
-                "source": "./apache2/sites-available/",
+                "source": "./apache/",
                 "installTo": "/etc/apache2/sites-available/"
             }
         ],
         "scripts": {
             "afterInstall": [
-                "./mum-scripts/after-install.php",
-                "./mum-scripts/permissions-fix"
+                "./mum-scripts/after-install"
             ]
         }
     },

@@ -1,7 +1,15 @@
 #! /bin/bash
 
+# Get the path to the web root folder
 webRootPath=`cat ../../install_to`
 cd "$webRootPath"
+
+# Move the readme and config files outside of the web root.
+mv "./readme.html" "../readme.html"
+mv "./wp-config.php" "../wp-config.php"
+
+# Remove the sample configuration file from the web root
+rm "./wp-config-sample.php"
 
 # Fix file and directory ownership / permissions
 chown -R www-data:www-data *
@@ -12,7 +20,7 @@ chmod 0644 ../wp-config.php
 find . -type f -exec chmod 0644 {} \+
 find . -type d -exec chmod 0755 {} \+
 
-# Ensure the WordPress uploads are writable but not executable
+# Ensure the files uploaded by WordPress are writable but not executable
 find ./wp-content/uploads -type f -exec chmod 0660 {} \+
 
 # Symlink our apache config file to sites-enabled
